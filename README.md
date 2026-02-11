@@ -1,7 +1,7 @@
 ```
 SIMPLE BANKING / CLIENT MANAGER (PHP/MYSQL)
 ===========================================
-VERSION:  1.0 (Single-table DB)
+VERSION:  1.0
 UI STYLE: RETRO / BRUTALIST
 STATUS:   REFACTORING IN PROGRESS
 
@@ -70,9 +70,9 @@ industrial aesthetic.
 * Block-style buttons with hard shadows.
 * Immediate access to data without simplified abstraction layers.
 
-DATA STRUCTURE (SQL SNIPPET)
+DATA STRUCTURE
 ----------------------------
-The 1.0 version of the system utilizes a simple database, with two, non-related tables:
+The 1.0 version of the system utilizes a simple database with two, non-related tables:
 
 CREATE TABLE szamlakezeles (
   id int NOT NULL AUTO_INCREMENT,
@@ -89,8 +89,6 @@ CREATE TABLE users (
   PRIMARY KEY (id),
   UNIQUE KEY (username)
 );
-
-
 
 ================================================================================
 AUTHOR: Princzinger Krisztián
