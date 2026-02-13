@@ -8,14 +8,14 @@ STATUS:   REFACTORING IN PROGRESS
 
 !!! NOTICE TO REVIEWERS !!!
 ---------------------------
-The core logic of this application is fully functional and tested. 
-The source code is currently undergoing a strict REFACTORING PROCESS to 
+The core logic of this project is fully functional and tested. 
+The source code is currently undergoing a REFACTORING PROCESS to 
 migrate variable naming conventions from Hungarian to English standards.
 
 
 DESCRIPTION
 -----------
-A lightweight, web-based financial ledger designed to 
+A lightweight, web-based project designed to 
 track account balances in real-time. 
 
 It implements a strict Access Control System: data visibility and CRUD 
@@ -23,8 +23,8 @@ operations are restricted to authenticated users only.
 
 SYSTEM SPECIFICATIONS
 ---------------------
-* LANGUAGE:  PHP (Native / Procedural)
-* DATABASE:  MySQL (Relational)
+* LANGUAGE:  PHP
+* DATABASE:  MySQL
 * FRONTEND:  HTML5 / CSS3 (Custom Retro Styling)
 * LOCALIZATION: Hungarian (Magyar)
 
@@ -36,32 +36,36 @@ VISUAL DEMONSTRATION
 
 
 ```
-FIGURE 1: The "Retro" Dashboard. Shows the authenticated Admin view with 
+FIGURE 1: The Retro Dashboard. Shows the authenticated view with 
 client list, real-time balance, and CRUD controls.
 
 
 KEY CAPABILITIES
 ----------------
 1. AUTHENTICATION & ACCESS CONTROL
-   The system is protected by a Login/Registration gateway. 
+   The data is protected by a Login/Registration gateway. 
    - Public View: Restricted (Redirects to Login).
-   - Admin View: Full access to the dashboard and data modification.
+   - Logged in view: Full access to the dashboard and data modification.
 
 2. CRUD OPERATIONS (Create, Read, Update, Delete)
    Authenticated users can:
-   - CREATE: Add new partners/clients to the database.
-   - READ: View the consolidated list of clients and balances.
-   - UPDATE: Modify client details or balance corrections.
+   - CREATE: Add new clients to the database.
+   - READ: View the list of clients and balances.
+   - UPDATE: Modify client name or balance.
    - DELETE: Remove obsolete records from the registry.
 
-3. REAL-TIME AGGREGATION
+4. SEARCH AND ORDERING FUNCTION
+   The list can be searched to only list data entries containing a specific character or string.
+   The list can be ordered in any direction by clicking on the column titles in the header.
+
+5. REAL-TIME AGGREGATION
    The dashboard displays some live statistics and charts (e.g., "Teljes Vagyon" / Total Assets) 
    calculated dynamically via SQL queries from the underlying dataset.
 
-4. DATA EXPORT / REPORTING
+6. DATA EXPORT / REPORTING
    One-click generation of structured .CSV files. This allows the financial 
    data to be extracted from the web environment and opened directly in 
-   Microsoft Excel for further analysis or auditing.
+   Microsoft Excel or other programs for further analysis or auditing.
 
 DESIGN PHILOSOPHY (UI/UX)
 -------------------------
@@ -90,6 +94,8 @@ CREATE TABLE users (
   PRIMARY KEY (id),
   UNIQUE KEY (username)
 );
+
+2.0 version is planned to have a more complex, relational database.
 
 ================================================================================
 AUTHOR: Princzinger Krisztián
