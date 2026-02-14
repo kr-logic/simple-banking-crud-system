@@ -32,8 +32,7 @@ SYSTEM SPECIFICATIONS
 VISUAL DEMONSTRATION
 --------------------
 ```
-<img width="1330" height="626" alt="image" src="https://github.com/user-attachments/assets/467df2e2-b0ad-46f1-9e99-5645a7e78695" />
-
+<img width="1492" height="939" alt="image" src="https://github.com/user-attachments/assets/eb9c9c2e-987e-4dcf-97e1-5fed9826a0a6" />
 
 ```
 FIGURE 1: The Retro Dashboard. Shows the authenticated view with 
