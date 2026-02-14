@@ -78,10 +78,10 @@ DATA STRUCTURE
 ----------------------------
 The 1.0 version of the system utilizes a simple database with two, non-related tables:
 
-CREATE TABLE szamlakezeles (
+CREATE TABLE accounts (
   id int NOT NULL AUTO_INCREMENT,
-  ugyfel varchar(100) DEFAULT NULL,
-  egyenleg double DEFAULT NULL,
+  client_name varchar(100) DEFAULT NULL,
+  balance double DEFAULT 0,
   PRIMARY KEY (id)
 );
 
