@@ -1,3 +1,60 @@
+<?php
+	session_start();
+	
+	//If logged in already, redirect to list.php
+	if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+		header("Location: list.php");
+		exit;
+	}
+
+	// Login (POST)
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		
+		// Connecting to SQL server
+		$connection = mysqli_connect("localhost", "root", "", "bank_db");
+		mysqli_set_charset($connection, "utf8");
+		
+		// SQL query to fetch the password hash (SQL injection protection from using prepared statement)
+		$sql_login = "SELECT password_hash FROM users WHERE username = ?";	
+		
+		if ($statement = mysqli_prepare($connection, $sql_login)){
+			// Binding parameter: username to ? (s for string)
+			mysqli_stmt_bind_param($statement,"s",$username);
+			
+			//Execute the SQL code
+			mysqli_stmt_execute($statement);
+			
+			//Binding the results
+			mysqli_stmt_bind_result($statement, $tarolt_hash);
+			
+			//Fetch the results
+			if (mysqli_stmt_fetch($statement)){ 				//Does the username exist?
+				//If it does, verify password
+				if(password_verify($password, $tarolt_hash)){
+					// Successful login
+					echo "Sikeres belépés!";
+					$_SESSION['logged_in'] = true;
+					$_SESSION['logged_in_username'] = $username;					
+					// Redirect to the database
+					header("Location: list.php");
+					exit;
+				} else {
+					echo "<script>alert('Hibás jelszó!');</script>";
+				}
+			} else {
+				echo "<script>alert('Nem létező felhasználónév!');</script>";
+				
+			}
+			
+		//Closing SQL statement
+		mysqli_stmt_close($statement);			
+		} else { 
+		echo "Hiba az SQL parancs előkészítésekor: " . mysqli_error($connection);
+		}
+	} 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,71 +133,13 @@
 			filter: brightness(1.25);
 			}
 			
-		.btn.flex{
+		.btn-flex{
 			display: flex;               
 			margin-top: 20px;
 		}
 	</style>
 </head>
 <body>
-<?php
-	session_start();
-	
-	//If logged in already, redirect to list.php
-	if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-		header("Location: list.php");
-		exit;
-	}
-
-	// Login (POST)
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		
-		// Connecting to SQL server
-		$connection = mysqli_connect("localhost", "root", "", "bank_db");
-		mysqli_set_charset($connection, "utf8");
-		
-		// SQL query to fetch the password hash (SQL injection protection from using prepared statement)
-		$sql_login = "SELECT password_hash FROM users WHERE username = ?";	
-		
-		if ($statement = mysqli_prepare($connection, $sql_login)){
-			// Binding parameter: username to ? (s for string)
-			mysqli_stmt_bind_param($statement,"s",$username);
-			
-			//Execute the SQL code
-			mysqli_stmt_execute($statement);
-			
-			//Binding the results
-			mysqli_stmt_bind_result($statement, $tarolt_hash);
-			
-			//Fetch the results
-			if (mysqli_stmt_fetch($statement)){ 				//Does the username exist?
-				//If it does, verify password
-				if(password_verify($password, $tarolt_hash)){
-					// Successful login
-					echo "Sikeres belépés!";
-					$_SESSION['logged_in'] = true;
-					$_SESSION['logged_in_username'] = $username;					
-					// Redirect to the database
-					header("Location: list.php");
-					exit;
-				} else {
-					echo "<script>alert('Hibás jelszó!');</script>";
-				}
-			} else {
-				echo "<script>alert('Nem létező felhasználónév!');</script>";
-				
-			}
-			
-		//Closing SQL statement
-		mysqli_stmt_close($statement);			
-		} else { 
-		echo "Hiba az SQL parancs előkészítésekor: " . mysqli_error($connection);
-		}
-	} 
-?>
-
 <div class="top-background-strip"></div>
 <div class="container">
         </div>
