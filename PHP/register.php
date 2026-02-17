@@ -2,7 +2,8 @@
 	$message = "";
 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
-		$connection = mysqli_connect("localhost", "root", "", "bank_db");
+		// Connecting
+		require_once 'db_connect.php';  // Imports $connection from db_connect.php
 		
 		$username = $_POST['user'];
 		$password = $_POST['pass'];

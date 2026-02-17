@@ -12,9 +12,8 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		
-		// Connecting to SQL server
-		$connection = mysqli_connect("localhost", "root", "", "bank_db");
-		mysqli_set_charset($connection, "utf8");
+		// Connecting
+		require_once 'db_connect.php';  // Imports $connection from db_connect.php
 		
 		// SQL query to fetch the password hash (SQL injection protection from using prepared statement)
 		$sql_login = "SELECT password_hash FROM users WHERE username = ?";	
