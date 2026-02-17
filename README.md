@@ -3,14 +3,8 @@ SIMPLE BANKING / CLIENT MANAGER (PHP/MYSQL)
 ===========================================
 VERSION:  1.0
 UI STYLE: RETRO / BRUTALIST
-STATUS:   REFACTORING/UPLOADING IN PROGRESS
-
-
-!!! NOTICE TO REVIEWERS !!!
----------------------------
-The core logic of this project is fully functional and tested. 
-The source code is currently undergoing a REFACTORING PROCESS to 
-migrate variable naming conventions from Hungarian to English standards.
+STATUS:   REFACTORING, STABLE UPLOAD COMPLETE
+The project is fully functional and tested. 
 
 
 DESCRIPTION
@@ -18,7 +12,7 @@ DESCRIPTION
 A lightweight, web-based project designed to 
 track account balances in real-time. 
 
-It implements a strict Access Control System: data visibility and CRUD 
+It implements an Access Control System: data visibility and CRUD 
 operations are restricted to authenticated users only.
 
 SYSTEM SPECIFICATIONS
@@ -76,7 +70,8 @@ industrial aesthetic.
 
 DATA STRUCTURE
 ----------------------------
-The 1.0 version of the system utilizes a simple database with two, non-related tables:
+The 1.0 version of the system utilizes a simple database with two, non-related tables.
+The full DB creation code with test data is in this repo's SQL folder.
 
 CREATE TABLE accounts (
   id int NOT NULL AUTO_INCREMENT,
