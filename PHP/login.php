@@ -9,7 +9,7 @@
 
 	// Login (POST)
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$username = $_POST['username'];
+		$username = trim($_POST['username']);
 		$password = $_POST['password'];
 		
 		// Connecting
@@ -26,23 +26,26 @@
 			mysqli_stmt_execute($statement);
 			
 			//Binding the results
-			mysqli_stmt_bind_result($statement, $tarolt_hash);
+			mysqli_stmt_bind_result($statement, $saved_hash);
 			
-			//Fetch the results
-			if (mysqli_stmt_fetch($statement)){ 				//Does the username exist?
-				//If it does, verify password
-				if(password_verify($password, $tarolt_hash)){
-					// Successful login	
-					// Session fixation protection
-					session_regenerate_id(true);
-					$_SESSION['logged_in'] = true;
-					$_SESSION['logged_in_username'] = $username;					
-					// Redirect to the database
-					header("Location: list.php");
-					exit;
-				} else {
-					$error_message = 'Helytelen felhasználónév vagy jelszó!';
-				}
+			//"The Timing Attack" protection (in case the attacker measures response time of checking/not checking database)
+			$user_exists = mysqli_stmt_fetch($statement);
+			// If user doesn't exist, create a dummy hash to verify against so the time taken is consistent
+			if (!$user_exists) {
+				$saved_hash = '$2y$10$9Y0jCgaVwJSM7An7KB0g9.mWGlDYlvO9Hqr7MBSFX0Okk7L1cg7/.';  // dummy hash to enforce testing
+			}
+			// Verification, even if user doesn't exist
+			$check = password_verify($password, $saved_hash);
+			
+			if ($user_exists && $check){ 				//Does the username exist?
+				// Successful login	
+				// Session fixation protection
+				session_regenerate_id(true);
+				$_SESSION['logged_in'] = true;
+				$_SESSION['logged_in_username'] = $username;					
+				// Redirect to the database
+				header("Location: list.php");
+				exit;
 			} else {
 				$error_message = 'Helytelen felhasználónév vagy jelszó!';			
 			}
