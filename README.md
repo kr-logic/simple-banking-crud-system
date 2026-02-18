@@ -11,7 +11,8 @@ DESCRIPTION
 -----------
 A lightweight, web-based project designed to track account balances in real-time. 
 
-It implements an Access Control System: data visibility and CRUD operations are restricted to authenticated users only.
+It implements an Access Control System: data visibility and CRUD operations are
+restricted to authenticated users only.
 
 SYSTEM SPECIFICATIONS
 ---------------------
@@ -27,7 +28,8 @@ VISUAL DEMONSTRATION
 <img width="1492" height="939" alt="image" src="https://github.com/user-attachments/assets/eb9c9c2e-987e-4dcf-97e1-5fed9826a0a6" />
 
 ```
-FIGURE 1: The Retro Dashboard. Shows the authenticated view with client list, real-time balance, and CRUD controls.
+FIGURE 1: The Retro Dashboard. Shows the authenticated view with client list,
+real-time balance, and CRUD controls.
 
 
 KEY CAPABILITIES
