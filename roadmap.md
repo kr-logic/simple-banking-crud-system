@@ -1,5 +1,6 @@
 ```
 Future Roadmap & Improvements
+-----------------------------
 
 Since the project is my first ever Web Development project,
 I'm building it from complete scratch as I learn more about the subject.
