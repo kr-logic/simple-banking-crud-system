@@ -32,25 +32,25 @@
 			if (mysqli_stmt_fetch($statement)){ 				//Does the username exist?
 				//If it does, verify password
 				if(password_verify($password, $tarolt_hash)){
-					// Successful login
-					echo "Sikeres belépés!";
+					// Successful login	
+					// Session fixation protection
+					session_regenerate_id(true);
 					$_SESSION['logged_in'] = true;
 					$_SESSION['logged_in_username'] = $username;					
 					// Redirect to the database
 					header("Location: list.php");
 					exit;
 				} else {
-					echo "<script>alert('Hibás jelszó!');</script>";
+					$error_message = 'Helytelen felhasználónév vagy jelszó!';
 				}
 			} else {
-				echo "<script>alert('Nem létező felhasználónév!');</script>";
-				
+				$error_message = 'Helytelen felhasználónév vagy jelszó!';			
 			}
-			
-		//Closing SQL statement
-		mysqli_stmt_close($statement);			
+			//Closing SQL statement
+			mysqli_stmt_close($statement);			
 		} else { 
-		echo "Hiba az SQL parancs előkészítésekor: " . mysqli_error($connection);
+			error_log("Adatbázis hiba: " . $connection->error);
+			$error_message = "Rendszerhiba történt. Kérjük, próbálja meg később.";
 		}
 	} 
 ?>
@@ -140,13 +140,19 @@
 </head>
 <body>
 <div class="top-background-strip"></div>
-<div class="container">
-        </div>
+<div class="container"></div>
+
 <h1>Gazdaságinformatika projekt</h1>
 <h2>Számlavezető rendszer</h2>
 <br>
 <br>
 <h3 style="text-align: left;">Belépés</h3>
+
+<?php 
+    if(!empty($error_message)){
+        echo '<div style="color:#a11;"><b>' . htmlspecialchars($error_message) . '</b></div><br>';
+    }
+    ?>
 
 	<form method="POST">
 		Felhasználónév: <input type="text" name="username"> <br><br>
