@@ -46,7 +46,7 @@ DESIGN PHILOSOPHY (UI/UX)
 -------------------------
 The interface was <u>intentionally</u> designed with a retro, "Form follows Function" aesthetic. This kind of UI is very nostalgic to me, and I always preferred this type of clean UI as opposed to a chaos of visual effects. 
 
-Nonetheless, in early development versions I had a modern-style UI version as well, so the user could switch between styles, but as the new functions kept changing the layout, I decided to remove it for now. Maybe in the future.
+Nonetheless, in early development versions I had a modern-style UI version as well, so the user could switch between styles, but as the new functions kept changing the layout, I decided to remove it for now. This is something for a future version.
 
 * High-contrast visibility (Green/Gray palette).
 * Block-style buttons with hard shadows.
