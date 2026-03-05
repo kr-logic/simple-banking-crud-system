@@ -1,38 +1,21 @@
-```
-SIMPLE BANKING / CLIENT MANAGER (PHP/MYSQL)
-===========================================
-VERSION:  1.0
-UI STYLE: RETRO / BRUTALIST
-STATUS:   REFACTORING, STABLE UPLOAD COMPLETE
-The project is fully functional and tested. 
+My first web development project. Created in order to learn and practice basic HTML, PHP, SQL and CSS, as well as their interaction with each other.
+The project is a lightweight, web-based project designed to track account balances in real-time. The system has fully operational CRUD system.
+It also implements an Access Control System: data visibility and CRUD operations are restricted to authenticated users only.
 
-
-DESCRIPTION
------------
-A lightweight, web-based project designed to track account balances in real-time. 
-
-It implements an Access Control System: data visibility and CRUD operations are
-restricted to authenticated users only.
-
-SYSTEM SPECIFICATIONS
----------------------
-* LANGUAGE:  PHP
-* DATABASE:  MySQL
-* FRONTEND:  HTML5 / CSS3 (Custom Retro Styling)
-* LOCALIZATION: Hungarian (Magyar)
+This repo contains the latest, stable 1.0 version of the project. Future versions and features were planned, but are put on hold due to other uni projects.
 
 
 VISUAL DEMONSTRATION
 --------------------
-```
+
 <img width="1492" height="939" alt="image" src="https://github.com/user-attachments/assets/eb9c9c2e-987e-4dcf-97e1-5fed9826a0a6" />
 
-```
+
 FIGURE 1: The Retro Dashboard. Shows the authenticated view with client list,
 real-time balance, and CRUD controls.
 
 
-KEY CAPABILITIES
+KEY FEATURES
 ----------------
 1. AUTHENTICATION & ACCESS CONTROL
    The data is protected by a Login/Registration gateway. 
@@ -94,4 +77,4 @@ CREATE TABLE users (
 AUTHOR: Princzinger Krisztián
 LICENSE: MIT
 ================================================================================
-```
+
