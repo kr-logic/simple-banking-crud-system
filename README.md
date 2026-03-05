@@ -18,11 +18,13 @@ real-time balance, and CRUD controls.
 KEY FEATURES
 ----------------
 1. AUTHENTICATION & ACCESS CONTROL
+
    The data is protected by a Login/Registration gateway. 
    - Public View: Restricted (Redirects to Login).
    - Logged in view: Full access to the dashboard and data modification.
 
 2. CRUD OPERATIONS (Create, Read, Update, Delete)
+
    Authenticated users can:
    - CREATE: Add new clients to the database.
    - READ: View the list of clients and balances.
@@ -30,14 +32,17 @@ KEY FEATURES
    - DELETE: Remove obsolete records from the registry.
 
 4. SEARCH AND ORDERING FUNCTION
+
    The list can be searched to only list data entries containing a specific character or string.
    The list can be ordered in any direction by clicking on the column titles in the header.
 
 5. REAL-TIME AGGREGATION
+
    The dashboard displays some live statistics and charts (e.g., "Teljes Vagyon" / Total Assets) 
    calculated dynamically via SQL queries from the underlying dataset.
 
 6. DATA EXPORT / REPORTING
+
    One-click generation of structured .CSV files. This allows the financial 
    data to be extracted from the web environment and opened directly in 
    Microsoft Excel or other programs for further analysis or auditing.
