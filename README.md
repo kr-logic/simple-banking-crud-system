@@ -11,8 +11,7 @@ VISUAL DEMONSTRATION
 <img width="1492" height="939" alt="image" src="https://github.com/user-attachments/assets/eb9c9c2e-987e-4dcf-97e1-5fed9826a0a6" />
 
 
-Figure 1: The Retro Dashboard. Shows the authenticated view with client list,
-real-time balance, and CRUD controls.
+Figure 1: The Retro Dashboard. Shows the authenticated view with client list, real-time balance, and CRUD controls.
 
 
 KEY FEATURES
@@ -33,24 +32,22 @@ KEY FEATURES
 
 4. SEARCH AND ORDERING FUNCTION
 
-   The list can be searched to only list data entries containing a specific character or string.
-   The list can be ordered in any direction by clicking on the column titles in the header.
+   The list can be searched to only list data entries containing a specific character or string. The list can be ordered in any direction by clicking on the column titles in the header.
 
 5. REAL-TIME AGGREGATION
 
-   The dashboard displays some live statistics and charts (e.g., "Teljes Vagyon" / Total Assets) 
-   calculated dynamically via SQL queries from the underlying dataset.
+   The dashboard displays some live statistics and charts (e.g., "Teljes Vagyon" / Total Assets) calculated dynamically via SQL queries from the underlying dataset.
 
 6. DATA EXPORT / REPORTING
 
-   One-click generation of structured .CSV files. This allows the financial 
-   data to be extracted from the web environment and opened directly in 
-   Microsoft Excel or other programs for further analysis or auditing.
+   One-click generation of structured .CSV files. This allows the financial data to be extracted from the web environment and opened directly in Microsoft Excel or other programs for further analysis or auditing.
 
 DESIGN PHILOSOPHY (UI/UX)
 -------------------------
-The interface was intentionally designed with a "Form follows Function" 
-industrial aesthetic.
+The interface was <u>intentionally</u> designed with a retro, "Form follows Function" aesthetic. This kind of UI is very nostalgic to me, and I always preferred this type of clean UI as opposed to a chaos of visual effects. 
+
+Nonetheless, in early development versions I had a modern-style UI version as well, so the user could switch between styles, but as the new functions kept changing the layout, I decided to remove it for now. Maybe in the future.
+
 * High-contrast visibility (Green/Gray palette).
 * Block-style buttons with hard shadows.
 * Immediate access to data without simplified abstraction layers.
