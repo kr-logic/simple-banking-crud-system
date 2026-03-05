@@ -48,9 +48,7 @@ The interface was <u>intentionally</u> designed with a retro, "Form follows Func
 
 Nonetheless, in early development versions I had a modern-style UI version as well, so the user could switch between styles, but as the new functions kept changing the layout, I decided to remove it for now. This is something for a future version.
 
-* High-contrast visibility (Green/Gray palette).
-* Block-style buttons with hard shadows.
-* Immediate access to data without simplified abstraction layers.
+
 
 DATA STRUCTURE
 ----------------------------
