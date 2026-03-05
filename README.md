@@ -55,6 +55,7 @@ DATA STRUCTURE
 The 1.0 version of the system utilizes a simple database with two, non-related tables.
 The full DB creation code with test data is in this repo's SQL folder.
 
+```
 CREATE TABLE accounts (
   id int NOT NULL AUTO_INCREMENT,
   client_name varchar(100) DEFAULT NULL,
@@ -70,11 +71,12 @@ CREATE TABLE users (
   PRIMARY KEY (id),
   UNIQUE KEY (username)
 );
+```
 
 2.0 version is planned to have a more complex, relational database.
 
-================================================================================
+--------------
 AUTHOR: Princzinger Krisztián
+
 LICENSE: MIT
-================================================================================
 
