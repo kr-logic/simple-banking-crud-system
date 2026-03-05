@@ -11,7 +11,7 @@ VISUAL DEMONSTRATION
 <img width="1492" height="939" alt="image" src="https://github.com/user-attachments/assets/eb9c9c2e-987e-4dcf-97e1-5fed9826a0a6" />
 
 
-FIGURE 1: The Retro Dashboard. Shows the authenticated view with client list,
+Figure 1: The Retro Dashboard. Shows the authenticated view with client list,
 real-time balance, and CRUD controls.
 
 
